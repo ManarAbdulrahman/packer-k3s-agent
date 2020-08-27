@@ -15,7 +15,7 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        sh 'make && make build'
+        sh 'make build'
       }
     }
   }
