@@ -6,7 +6,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    stattt: testing
+    stat: agent
 spec:
   containers:
   - name: packer
