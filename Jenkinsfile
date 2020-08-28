@@ -26,15 +26,6 @@ spec:
     PROJECT_NAME = 'phi-k3s-agent'
   }
   stages {
-          stage ('make') {
-
-            steps {
-                //sh "make init"
-              container ("make") {
-                sh "make"
-              }
-            }
-        }
           stage ('build') {
 
             steps {
