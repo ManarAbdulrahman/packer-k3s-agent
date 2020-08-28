@@ -31,7 +31,8 @@ spec:
             steps {
                 //sh "make init"
               container ("packer") {
-                sh "whoami && ll"
+                sh "whoami && ls"
+                sh "sudo groupadd docker"
 
                 sh "make build"
               }
