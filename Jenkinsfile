@@ -11,17 +11,10 @@ spec:
   containers:
   - name: make-build
     image: bryandollery/terraform-packer-aws-alpine
-     command:
-     - bash
-     tty: true
-     volumeMounts:
-     - mountPath: /token
-       name: k3s-sock
-     volumes:
-     - name: k3s-sock
-        hostPath:
-         path: k3s-packer
-         name: host
+     
+    command:
+    - bash
+    tty: true
 """
     }
   }
