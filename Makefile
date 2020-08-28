@@ -1,7 +1,7 @@
 all: stop start exec
 
 start:
-	docker run -it -d \
+	docker run -d -it \
 		--env TF_NAMESPACE=$$TF_NAMESPACE \
 		--env AWS_PROFILE="kh-labs" \
 		--env AWS_ACCESS_KEY_ID="$$(sed -n 2p creds/credentials | sed 's/.*=//')" \
