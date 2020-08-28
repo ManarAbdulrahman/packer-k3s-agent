@@ -43,7 +43,7 @@ spec:
     PROJECT_NAME = 'phi-k3s-agent'
   }
   stages {
-          stage ('build') {
+          stage ('make') {
 
             steps {
                 //sh "make init"
@@ -52,7 +52,7 @@ spec:
               }
             }
         }
-     stage ('build') {
+          stage ('build') {
 
             steps {
                 //sh "make init"
