@@ -5,3 +5,4 @@ export K3S_HOST=controlplane.phi.com
 export K3S_TOKEN=$(cat /home/ubuntu/token)
 export K3S_URL=https://$K3S_HOST:6443
 curl -sfL https://get.k3s.io | sh -
+
