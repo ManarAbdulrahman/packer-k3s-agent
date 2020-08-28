@@ -9,11 +9,29 @@ metadata:
     stat: agent
 spec:
   containers:
-  - name: packer
-    image: bryandollery/terraform-packer-aws-alpine
-    command:
-    - bash
-    tty: true
+    - name: make
+      image: bryandollery/terraform-packer-aws-alpine
+      command:
+      - bash
+      tty: true
+      volumeMounts:
+      - mountPath: /var/run/docker.sock
+        name: docker-sock
+      - mountPath: k3s_packer
+        name: k3s-packer
+    - name: make-build
+      image: bryandollery/terraform-packer-aws-alpine
+      command:
+      - bash
+      tty: true
+    volumes:
+    - name: docker-sock
+      hostPath:
+        path: /var/run/docker.sock
+        type: Socket
+    - name: k3s-packer
+          hostPath:
+            path: /token
 """
     }
   }
@@ -25,13 +43,20 @@ spec:
     PROJECT_NAME = 'phi-k3s-agent'
   }
   stages {
+          stage ('build') {
 
+            steps {
+                //sh "make init"
+              container ("make") {
+                sh "make"
+              }
+            }
+        }
      stage ('build') {
 
             steps {
                 //sh "make init"
-              container ("packer") {
-                sh "whoami && ls"
+              container ("make-build") {
                 sh "make build"
               }
             }
