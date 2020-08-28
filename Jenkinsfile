@@ -9,29 +9,19 @@ metadata:
     stat: agent
 spec:
   containers:
-    - name: make
-      image: bryandollery/terraform-packer-aws-alpine
-      command:
-      - bash
-      tty: true
-      volumeMounts:
-      - mountPath: /var/run/docker.sock
-        name: docker-sock
-      - mountPath: k3s_packer
-        name: k3s-packer
     - name: make-build
       image: bryandollery/terraform-packer-aws-alpine
       command:
       - bash
       tty: true
+    volumeMounts:
+    - mountPath: /token
+      name: k3s-sock
     volumes:
-    - name: docker-sock
-      hostPath:
-        path: /var/run/docker.sock
-        type: Socket
-    - name: k3s-packer
+    - name: k3s-sock
           hostPath:
-            path: /token
+            path: k3s-packer
+            name: host
 """
     }
   }
