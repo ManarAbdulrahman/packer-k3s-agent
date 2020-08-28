@@ -31,8 +31,9 @@ spec:
             steps {
                 //sh "make init"
               container ("packer") {
+                sh "whoami && ll"
 
-                sh "make && make build"
+                sh "make build"
               }
             }
         }
