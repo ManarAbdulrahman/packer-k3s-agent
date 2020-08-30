@@ -13,8 +13,8 @@ export K3S_URL=https://\$K3S_HOST:6443
 echo 'export K3S_HOST=controlplane.phi.com' >> ~/.bashrc
 echo 'export K3S_TOKEN="\$(nc.traditional \$K3S_HOST 12345)"' >> ~/.bashrc
 echo 'export K3S_URL=https://\$K3S_HOST:6443' >> ~/.bashrc
-sudo systemctl stop k3s
-sudo k3s agent --server \${K3S_URL} --token \${K3S_TOKEN}
+#sudo systemctl stop k3s
+#sudo k3s agent --server \${K3S_URL} --token \${K3S_TOKEN}
 curl -sfL https://get.k3s.io | sh -
 sudo systemctl stop get_token
 EOF
