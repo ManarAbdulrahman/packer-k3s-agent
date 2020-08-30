@@ -16,6 +16,7 @@ echo 'export K3S_URL=https://\$K3S_HOST:6443' >> ~/.bashrc
 sudo systemctl stop k3s
 sudo k3s agent --server \${K3S_URL} --token \${K3S_TOKEN}
 curl -sfL https://get.k3s.io | sh -
+sudo systemctl stop get_token
 EOF
 sudo chmod a+x /home/ubuntu/serverinfo.sh
 sudo cat <<EOF >> /home/ubuntu/get_token.service
