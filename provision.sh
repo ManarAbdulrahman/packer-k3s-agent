@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt update -y && sleep 30 && sudo apt install -y curl vim jq git docker.io
+sudo apt update -y && sleep 30 && sudo apt install -y curl vim git docker.io
 sudo apt install  -y netcat-traditional
 sudo apt install -y make
 sudo groupadd docker
