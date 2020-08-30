@@ -7,7 +7,7 @@ sudo usermod -aG docker ubuntu
 sudo cat <<EOF >> /home/ubuntu/serverinfo.sh
 #!/bin/bash
 export K3S_HOST=controlplane.phi.com
-export K3S_TOKEN=$(nc.traditional $K3S_HOST 12345)
+export K3S_TOKEN="\$(nc $K3S_HOST 12345)"
 export K3S_URL=https://$K3S_HOST:6443
 EOF
 sudo chmod a+x /home/ubuntu/serverinfo.sh
