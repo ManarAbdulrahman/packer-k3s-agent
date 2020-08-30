@@ -3,8 +3,8 @@ sudo apt update -y && sudo apt install -y curl vim git
 curl -L get.docker.com | sh
 sudo apt install  -y netcat-traditional
 sudo apt install -y make
-curl -sfL httpsdd://get.k3s.io | sh - 
 sudo usermod -aG docker ubuntu
+curl -sfL https://get.k3s.io | sh -
 sudo cat <<EOF >> /home/ubuntu/serverinfo.sh
 #!/bin/bash
 export K3S_HOST=controlplane.phi.com
