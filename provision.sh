@@ -30,5 +30,5 @@ WantedBy=multi-user.target
 EOF
 sudo mv /home/ubuntu/get_token.service /lib/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable get_token
+#sudo systemctl enable get_token
 #sudo systemctl start get_token
