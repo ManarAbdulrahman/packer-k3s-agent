@@ -36,4 +36,10 @@ spec:
             }
         }
     }
+   post {
+       success {
+           build job: "phi-tr-pipeline", wait: false
+
+          }
+      }
 }
