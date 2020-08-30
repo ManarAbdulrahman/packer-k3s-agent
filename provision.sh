@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo apt update -y && sudo apt install -y curl vim git docker.io
+sudo apt update -y && sudo apt install -y curl vim git
+curl -L get.docker.com | sh
 sudo apt install  -y netcat-traditional
 sudo apt install -y make
 sudo groupadd docker
