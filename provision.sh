@@ -4,7 +4,7 @@ curl -L get.docker.com | sh
 sudo apt install  -y netcat-traditional
 sudo apt install -y make
 sudo usermod -aG docker ubuntu
-curl -sfL https://get.k3s.io | sh -
+#curl -sfL https://get.k3s.io | sh -
 sudo cat <<EOF >> /home/ubuntu/serverinfo.sh
 #!/bin/bash
 export K3S_HOST=controlplane.phi.com
@@ -15,6 +15,7 @@ echo 'export K3S_TOKEN="\$(nc.traditional \$K3S_HOST 12345)"' >> ~/.bashrc
 echo 'export K3S_URL=https://\$K3S_HOST:6443' >> ~/.bashrc
 sudo systemctl stop k3s
 sudo k3s agent --server \${K3S_URL} --token \${K3S_TOKEN}
+curl -sfL https://get.k3s.io | sh -
 EOF
 sudo chmod a+x /home/ubuntu/serverinfo.sh
 sudo cat <<EOF >> /home/ubuntu/get_token.service
